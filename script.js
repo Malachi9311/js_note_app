@@ -11,6 +11,14 @@ const createNote = () => {
     inputBox.append(img);
     notesContainer.appendChild(inputBox);
     // notesContainer.appendChild(inputBox).appendChild(img);
-}
+};
 
 createBtn.addEventListener('click', createNote);
+
+const removeNote = (e) => {
+    if(e.target.tagName === "IMG") {
+        e.target.parentElement.remove();
+    }
+};
+
+notesContainer.addEventListener('click', removeNote);
